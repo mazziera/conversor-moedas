@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Э-Transactions Ш </title>
+
+    <link rel="shortcut icon" href="./src/imagens/logo-estatico.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="./src/css/desktop.css">
+
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main class="container-principal">
+        
+        <img src="./src/imagens/logo-estatico.png" alt="Э-Transactions Ш logo" class="logo">
+       
+        <section class="conversor-container">
+            <label> 
+                Converter de
+
+                <select class="seletor-moedas-converter">
+                    <option value="real"> BRL</option>
+                    <option value="dolar">USD</option>
+                    <option value="euro">EUR</option>
+                </select>
+            </label>
+
+            <label> 
+                para
+
+                <select class="seletor-moedas-convertidas">
+                    <option value="dolar"> USD </option>
+                    <option value="euro">EUR</option>
+                    <option value="real">BRL</option>
+                </select>
+            </label>
+
+            <label>
+                <b>Valor</b>
+
+                <input type="number" placeholder="R$ 1.000,00" class="input-valor">
+            </label>
+
+            <div class="botao"><button>Converter</button></div>
+
+            <section class="conversao-container">
+                <div>
+                    <img src="./src/imagens/logo-brl.png" alt="logo moeda " class="imagem-pais-converter">
+                    <p class="campo-moeda-converter"> BRL</p>
+                    <p class="campo-valor-converter">R$ 0.00</p>
+
+                </div>
+
+
+                <span class="seta"> </span>
+
+                <div>
+                    <img src="./src/imagens/logo-dolar.png" alt="logo moeda " class="imagem-pais-convertido">
+                    <p class="campo-moeda-convertida"> USD</p>
+                    <p class="campo-valor-convertido">$ 0.00</p>
+
+                </div>
+            </section>
+            
+            
+        </section>
+    </main>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

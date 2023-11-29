@@ -1,0 +1,61 @@
+@media (min-width: 700px){
+
+    .container-principal .conversor-container{
+        width: 775px;
+        padding:  20px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.669);
+    }
+
+    .conversor-container label{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .conversor-container .botao {
+        width: 20%;
+        margin-top: 15px;
+        align-self: center;
+        position: absolute;
+        top: 240px;
+        right: 550px;
+    }
+    
+
+    .conversor-container .conversao-container{
+        width: 100%;
+        margin: 35px auto 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+
+    .container-principal .conversao-container{
+        position: static; 
+    }
+
+    .container-principal .conversao-container .seta::after{
+        content: "⇆";
+    }
+
+
+}
+
+@media (width: 1024px){
+    .conversor-container .botao {
+        width: 25%;
+        right: 390px;
+    }
+}
+
+@media (min-width: 1440px){
+    .conversor-container .botao {
+        width: 20%;
+        right: 570px;
+    }
+}
