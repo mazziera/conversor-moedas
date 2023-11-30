@@ -20,8 +20,8 @@
         margin-top: 15px;
         align-self: center;
         position: absolute;
-        top: 240px;
-        right: 550px;
+        top: 230px;
+        right: 545px;
     }
     
 
@@ -49,13 +49,13 @@
 @media (width: 1024px){
     .conversor-container .botao {
         width: 25%;
-        right: 390px;
+        right: 382px;
     }
 }
 
 @media (min-width: 1440px){
     .conversor-container .botao {
         width: 20%;
-        right: 570px;
+        right: 580px;
     }
 }

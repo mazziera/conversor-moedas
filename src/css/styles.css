@@ -5,12 +5,11 @@ html{
 }
 
 body{
-    background-color: lightskyblue;
+    background-color: #D9F5FF;
 }
 
 .container-principal .logo{
     max-width: 250px;
-    filter: contrast(175%) brightness(3%);
     border-radius: 20px;
     display: block;
     margin: 10px auto;
