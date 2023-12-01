@@ -95,6 +95,7 @@ function mudarPaisMoedaConverter(){
         imagemPaisEsquerda.src = "./src/imagens/logo-brl.png";
     }
 
+    converterMoeda();
 }
 
 function mudarPaisMoedaConvertida() {
