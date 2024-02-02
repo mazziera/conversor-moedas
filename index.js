@@ -1,13 +1,9 @@
 const botaoConverter = document.querySelector(".botao");
-
 const primeiroSeletorDeMoedas = document.querySelector(".seletor-moedas-converter");
-
 const segundoSeletorDeMoedas = document.querySelector(".seletor-moedas-convertidas");
-
 const valorDigitadoPeloUsuario = document.querySelector(".input-valor").value;
 
 function converterMoeda() {
-    
 
     const real = 1.00;
     const dolarEmReal = 4.93;
@@ -75,21 +71,21 @@ function converterMoeda() {
 
 }
 
-function mudarPaisMoedaConverter(){
+function mudarPaisMoedaConverter() {
     const campoMoedaConverter = document.querySelector(".campo-moeda-converter");
     const imagemPaisEsquerda = document.querySelector(".imagem-pais-esquerda");
 
-    if (primeiroSeletorDeMoedas.value == "dolar"){
+    if (primeiroSeletorDeMoedas.value == "dolar") {
 
         campoMoedaConverter.innerHTML = "USD";
         imagemPaisEsquerda.src = "./src/imagens/logo-dolar.png";
 
-    } else if (primeiroSeletorDeMoedas.value == "euro"){
+    } else if (primeiroSeletorDeMoedas.value == "euro") {
 
         campoMoedaConverter.innerHTML = "EUR";
         imagemPaisEsquerda.src = "./src/imagens/logo-euro.png";
 
-    } else if (primeiroSeletorDeMoedas.value == "real"){
+    } else if (primeiroSeletorDeMoedas.value == "real") {
 
         campoMoedaConverter.innerHTML = "BRL";
         imagemPaisEsquerda.src = "./src/imagens/logo-brl.png";
@@ -123,7 +119,6 @@ function mudarPaisMoedaConvertida() {
     converterMoeda();
 
 }
-
 
 primeiroSeletorDeMoedas.addEventListener("change", mudarPaisMoedaConverter)
 segundoSeletorDeMoedas.addEventListener("change", mudarPaisMoedaConvertida);
