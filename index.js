@@ -3,14 +3,13 @@ const primeiroSeletorDeMoedas = document.querySelector(".seletor-moedas-converte
 const segundoSeletorDeMoedas = document.querySelector(".seletor-moedas-convertidas");
 const valorDigitadoPeloUsuario = document.querySelector(".input-valor").value;
 
-function converterMoeda() {
+async function converterMoeda() {
 
-    const real = 1.00;
-    const dolarEmReal = 4.93;
-    const euroEmReal = 5.36;
 
-    const dolarEmEuro = 1.09;
-    const euroEmDolar = 0.92;
+    const apiData = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json());
+
+    const dolar = apiData.USDBRL.high;
+    const euro = apiData.EURBRL.high;
 
 
     const valorConvertido = document.querySelector(".campo-valor-convertido");
@@ -18,37 +17,37 @@ function converterMoeda() {
 
 
     if (primeiroSeletorDeMoedas.value == "real" && segundoSeletorDeMoedas.value == "dolar") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario / dolarEmReal);
+        valorConvertido.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario / dolar);
 
         valorConverter.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario);
 
 
     } else if (primeiroSeletorDeMoedas.value == "dolar" && segundoSeletorDeMoedas.value == "real") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario * dolarEmReal);
+        valorConvertido.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario * dolar);
 
         valorConverter.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario);
 
 
     } else if (primeiroSeletorDeMoedas.value == "real" && segundoSeletorDeMoedas.value == "euro") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario / euroEmReal);
+        valorConvertido.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario / euro);
 
         valorConverter.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario);
 
 
     } else if (primeiroSeletorDeMoedas.value == "euro" && segundoSeletorDeMoedas.value == "real") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario * euroEmReal);
+        valorConvertido.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorDigitadoPeloUsuario * euro);
 
         valorConverter.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario);
 
 
     } else if (primeiroSeletorDeMoedas.value == "dolar" && segundoSeletorDeMoedas.value == "euro") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario / dolarEmEuro);
+        valorConvertido.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario / dolar);
 
         valorConverter.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario);
 
 
     } else if (primeiroSeletorDeMoedas.value == "euro" && segundoSeletorDeMoedas.value == "dolar") {
-        valorConvertido.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario / euroEmDolar);
+        valorConvertido.innerHTML = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorDigitadoPeloUsuario / euro);
 
         valorConverter.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(valorDigitadoPeloUsuario);
 
